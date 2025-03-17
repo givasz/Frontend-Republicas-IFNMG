@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #161616;
+}
+
+.caixa {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    height: 60vh;
+}
+
+input {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.alternar {
+    background-color: #007bff;
+    margin-top: 10px;
+}
+
+.alternar:hover {
+    background-color: #0056b3;
+}
+
+header {
+    background-color: #161616;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.116);
+    color: white;
+    align-items: center;
+    font-size: 0.9vw;
+    position: fixed;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+}
+
+.filtros-container {
+    height: 100%;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    margin-top: 10vh;
+}
+
+.republicas-container {
+    height: 100%;
+    width: 70vw;
+    margin-left: 30vw;
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtros {
+    background-color: #313131;
+    height: 70vh;
+    width: 90%;
+    border-radius: 1.0rem;
+    color: white;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.republica {
+    height: 50vh;
+    width: 30vw;
+    border: solid rgba(255, 255, 255, 0.13) 1px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 1.0rem;
+    cursor: pointer;
+    transition: 0.5s;
+    background-image: url("/assets/img/noimage.jpg");
+    background-position: center;
+}
+
+.republica:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.582);
+    transition: 0.5s;
+}
+
+h2 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+h1 {
+    margin-left: 1.5rem;
+    color: rgb(255, 255, 255);
+}
