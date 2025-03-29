@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar República</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Adicionar República</h1>
+        <nav>
+            <button onclick="window.location.href='index.html'">Voltar</button>
+        </nav>
+    </header>
+    <main class="container">
+        <form id="form-adicionar-republica">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" required></textarea>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" required>
+            <label for="rua">Rua:</label>
+            <input type="text" id="rua" required>
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" required>
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento">
+            <label for="valorMensal">Valor Mensal (R$):</label>
+            <input type="number" id="valorMensal" required>
+            <label for="vagas">Vagas Disponíveis:</label>
+            <input type="number" id="vagas" required>
+            <button type="submit">Cadastrar República</button>
+        </form>
+        <div id="mensagem-confirmacao" class="mensagem-confirmacao"></div>
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
