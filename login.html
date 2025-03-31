@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Repúblicas IFNMG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .campo-senha input {
+            color: #1f2937 !important;
+        }
+        #icone-senha {
+            color: #6b7280 !important;
+        }
+        #icone-senha:hover {
+            color: #4b5563 !important;
+        }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 1000;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .toast.sucesso { background: #10b981; }
+        .toast.erro { background: #ef4444; }
+        .toast.aviso { background: #f59e0b; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <!-- Container principal -->
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md mx-4">
+        <h2 id="titulo-formulario" class="text-2xl font-bold text-center mb-6 text-gray-800">Login</h2>
+       
+        <form id="form-autenticacao" class="space-y-4">
+            <!-- Campo Nome (inicialmente oculto) -->
+            <div id="container-nome" class="hidden">
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                       class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+           
+            <!-- Campo Email -->
+            <div>
+                <input type="email" id="email" name="email" placeholder="Seu email" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+           
+            <!-- Campo Senha com ícone -->
+            <div class="campo-senha relative">
+                <input type="password" id="senha" name="senha" placeholder="Sua senha" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded pr-10 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <i id="icone-senha" class="bi bi-eye-fill absolute right-3 top-3 cursor-pointer"></i>
+            </div>
+           
+            <!-- Botão Submit -->
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded transition-colors">
+                Entrar
+            </button>
+        </form>
+       
+        <!-- Botão Alternar Login/Cadastro -->
+        <button id="botao-alternar" type="button" class="w-full mt-4 text-blue-600 hover:text-blue-800">
+            Criar conta
+        </button>
+       
+        <!-- Botão Voltar -->
+        <button type="button" onclick="window.location.href='index.html'"
+                class="w-full mt-2 text-gray-600 hover:text-gray-800 flex items-center justify-center gap-1">
+            <i class="bi bi-arrow-left"></i>
+            Voltar para a página inicial
+        </button>
+    </div>
+
+    <!-- Toasts-->
+    <div id="toast-container"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
