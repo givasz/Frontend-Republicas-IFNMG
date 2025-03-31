@@ -1,4 +1,4 @@
-const URL_BASE_API = "http://localhost:3000";
+const URL_BASE_API = "https://backend-republicas-ifnmg.onrender.com";
 
 // Elementos do DOM
 const formulario = document.getElementById("form-autenticacao");
