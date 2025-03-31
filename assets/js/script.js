@@ -18,6 +18,7 @@ const botaoLogin = document.getElementById("btn-login");
 let ehLogin = true;
 let todasRepublicas = [];
 let modoMinhasRepublicas = false;
+let url_IMG = "https://igkzvtxpqxweululmabf.supabase.co/storage/v1/object/public/republicassalinas/republicas/noimage.jpg"
 
 // Lista de bairros atualizada
 const bairros = [
@@ -281,7 +282,8 @@ async function handleNovaRepublica(evento) {
         numero: parseInt(document.getElementById("numero").value),
         complemento: document.getElementById("complemento").value,
         valorMensal: parseFloat(document.getElementById("valorMensal").value),
-        vagas: parseInt(document.getElementById("vagas").value)
+        vagas: parseInt(document.getElementById("vagas").value),
+        capa: url_IMG
     };
 
     // Validação
@@ -308,6 +310,7 @@ async function handleNovaRepublica(evento) {
         }
 
         alert("República cadastrada com sucesso!");
+        url_IMG = "https://igkzvtxpqxweululmabf.supabase.co/storage/v1/object/public/republicassalinas/republicas/noimage.jpg";
         window.location.href = "index.html";
     } catch (erro) {
         console.error("Erro ao cadastrar república:", erro);
@@ -354,4 +357,34 @@ botaoAddRepublica?.addEventListener("click", () => {
 // Botão de login 
 botaoLogin?.addEventListener("click", () => {
     window.location.href = "login.html";
+});
+
+//Upload da capa
+document.getElementById("capa").addEventListener("change", async function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    
+    const formData = new FormData();
+    formData.append("file", file);
+    
+    try {
+        const response = await fetch(`${URL_BASE_API}/upload`, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}` 
+            }
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+            console.log("Imagem enviada com sucesso:", result.url);
+            url_IMG = result.url;
+        } else {
+            console.error("Erro no upload:", result.error);
+        }
+    } catch (error) {
+        console.error("Erro ao enviar imagem:", error);
+    }
 });
