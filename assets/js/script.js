@@ -152,6 +152,7 @@ function exibirRepublicas(republicas, mostrarBotoes = false) {
         const titulo = rep.titulo || "República sem nome";
         const descricao = rep.descricao || "Sem descrição disponível";
         const valorFormatado = rep.valorMensal ? `R$${rep.valorMensal.toFixed(2)}` : "Valor não informado";
+        const capa = rep.capa;
 
         // Botões de add/excluir
         const botoes = mostrarBotoes ? `
@@ -166,6 +167,7 @@ function exibirRepublicas(republicas, mostrarBotoes = false) {
         ` : '';
 
         card.innerHTML = `
+            <img src="${capa}" alt="Imagem da república" width="300">
             <h3 class="text-xl font-semibold mb-2 text-gray-800 border-b pb-2">${titulo}</h3>
             <p class="text-gray-600 mb-3">${descricao}</p>
             <div class="space-y-1 text-sm">
